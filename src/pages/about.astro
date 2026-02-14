@@ -1,0 +1,126 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+
+const teamMembers = [
+    {
+        name: "Michael Baim",
+        title: "Partner",
+        bio: "Michael Baim focuses on creditors' rights and commercial litigation. With extensive experience representing financial institutions and businesses, he is a formidable advocate in and out of the courtroom, known for his strategic approach to complex collection matters.",
+        details: {
+            "Areas Of Practice": ["Creditors’ Rights", "Commercial Litigation", "Breach of Contract"],
+            "Bar Admissions": ["Illinois"],
+            "Education": ["The John Marshall Law School, Chicago, Illinois, J.D.", "University of Illinois, Champaign, Illinois, B.A."]
+        }
+    },
+    {
+        name: "Patricia Lepak",
+        title: "Partner",
+        bio: "Patricia Lepak has a deep understanding of real estate law, guiding clients through both commercial and residential transactions with meticulous attention to detail. Her practice also includes representing creditors in litigation, providing comprehensive legal support to her clients.",
+        details: {
+            "Areas Of Practice": ["Real Estate Law", "Creditors’ Rights", "Commercial Closings"],
+            "Bar Admissions": ["Illinois"],
+            "Education": ["DePaul University College of Law, Chicago, Illinois, J.D.", "University of Illinois, Chicago, Illinois, B.A."]
+        }
+    },
+    {
+        name: "Brian Berlin",
+        title: "Partner",
+        bio: "Brian Berlin is a seasoned litigator specializing in business and commercial law. He excels in defending businesses against counterclaims and pursuing breach of contract actions, always aiming for the most efficient and favorable resolution for his clients.",
+        details: {
+            "Areas Of Practice": ["Commercial Litigation", "Counterclaim Defense", "Business Law"],
+            "Bar Admissions": ["Illinois"],
+            "Education": ["Chicago-Kent College of Law, Illinois Institute of Technology, Chicago, Illinois, J.D.", "University of Michigan, Ann Arbor, Michigan, B.A."]
+        }
+    }
+];
+
+const affiliations = [
+    "Commercial Law League of America (CLLA)",
+    "The National Creditors Bar Association (NARCA)",
+    "The Forwarder’s List",
+    "The American Lawyers Quarterly (ALQ)",
+    "The Illinois Creditors Bar (ILCBA)",
+    "The General Bar"
+];
+---
+
+<Layout 
+    title="About CKB Firm | Our Approach & History"
+    description="Learn about the CKB Firm's history of excellence, our client-focused approach, and the experienced attorneys dedicated to your business's success in Illinois."
+    seoKeyword="Chicago business law firm"
+>
+    <Hero 
+        title="About CKB Firm"
+        tagline="A Tradition of Excellence, A Future of Innovation."
+        imageUrl="/office-interior.jpg"
+    />
+
+    <!-- Mission & Values -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Firm's Mission</h2>
+                    <p class="text-gray-700 mb-4">At The CKB Firm, we have created an atmosphere of excellence. As our harshest critics, we constantly strive to improve our firm and provide exceptional legal services on a consistent basis. Our mission is to deliver value-added legal solutions that protect our clients' interests and contribute to their success.</p>
+                    <p class="text-gray-700">The cornerstone of our success is the quality relationships we maintain with our clients. We pride ourselves on the ability to tailor our legal representation to meet their diverse needs, ensuring they are timely updated and given intelligent, actionable legal recommendations.</p>
+                </div>
+                <div class="bg-brand-light p-8 rounded-lg">
+                    <h3 class="font-heading font-bold text-2xl mb-4">Our Core Values</h3>
+                    <ul class="space-y-3 list-disc list-inside text-gray-700">
+                        <li><span class="font-bold text-brand-primary">Integrity:</span> Upholding the highest ethical standards in all we do.</li>
+                        <li><span class="font-bold text-brand-primary">Excellence:</span> Relentlessly pursuing the best possible outcomes for our clients.</li>
+                        <li><span class="font-bold text-brand-primary">Innovation:</span> Leveraging technology to provide efficient and effective legal services.</li>
+                        <li><span class="font-bold text-brand-primary">Partnership:</span> Building strong, lasting relationships based on trust and mutual respect.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section id="team" class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Attorneys</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">Our team of dedicated partners brings decades of combined experience and specialized knowledge to every case.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {teamMembers.map(member => (
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold font-heading mb-1">{member.name}</h3>
+                        <p class="text-brand-accent font-semibold mb-4">{member.title}</p>
+                        <p class="text-gray-600 mb-6">{member.bio}</p>
+                         <div class="text-left text-sm">
+                            {Object.entries(member.details).map(([key, value]) => (
+                                <div class="mb-3">
+                                    <h4 class="font-bold text-brand-primary">{key}</h4>
+                                    <ul class="list-disc list-inside text-gray-600">
+                                        {value.map(item => <li>{item}</li>)}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Affiliations -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-bold font-heading mb-4">Our Commitment to Technology</h2>
+                <p class="text-gray-700">The CKB Firm is at the forefront in law office automation. With an eye towards the future, we invest in the latest technology for the benefit of our clients. Through technology, we aim to provide value-added legal collection and litigation services to the business community, enhancing efficiency, transparency, and results.</p>
+            </div>
+             <div>
+                <h2 class="text-3xl font-bold font-heading mb-4">Professional Memberships</h2>
+                <p class="text-gray-700 mb-4">Our active participation in leading legal and commercial organizations keeps us at the cutting edge of our practice areas.</p>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 list-disc list-inside">
+                    {affiliations.map(item => <li class="text-gray-600">{item}</li>)}
+                </ul>
+            </div>
+        </div>
+    </section>
+</Layout>

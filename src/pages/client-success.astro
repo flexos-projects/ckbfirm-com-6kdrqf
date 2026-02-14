@@ -1,0 +1,113 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import CTA from '@/components/CTA.astro';
+
+const testimonials = [
+    {
+        quote: "CKB Firm's strategic approach to our litigation case was flawless. They were communicative, professional, and ultimately secured a result that exceeded our expectations. They are our go-to counsel for any complex commercial dispute.",
+        author: "CFO, National Manufacturing Company"
+    },
+    {
+        quote: "As a financial institution, we rely on CKB Firm for their expertise in creditors' rights. Their tech-enabled process for collections is incredibly efficient and has significantly improved our recovery rates. Highly recommended.",
+        author: "VP of Lending, Regional Bank"
+    },
+    {
+        quote: "The team at CKB handled our commercial real estate closing with exceptional professionalism and attention to detail. They identified a critical issue in the title work that could have cost us dearly. We felt protected every step of the way.",
+        author: "Owner, Real Estate Investment Group"
+    },
+     {
+        quote: "We were facing a difficult counterclaim that threatened our business. CKB Firm mounted a brilliant defense, ultimately getting the case dismissed. Their expertise and confidence were reassuring throughout a stressful process.",
+        author: "CEO, Logistics Company"
+    }
+];
+
+const caseStudies = [
+    {
+        category: "Creditors' Rights",
+        title: "High-Volume Debt Recovery for a Financial Services Company",
+        challenge: "A client with a large portfolio of defaulted commercial loans was struggling with low recovery rates and high internal administrative costs.",
+        solution: "CKB Firm implemented a technology-driven, multi-stage recovery process. We integrated with the client's system for seamless placement of files, automated the pre-suit demand process, and prioritized litigation for high-value accounts with identifiable assets.",
+        result: "Increased the client's overall recovery rate by 35% within the first year and significantly reduced their administrative burden. Successfully domesticated and collected on judgments in multiple states."
+    },
+    {
+        category: "Commercial Litigation",
+        title: "Defense of a Breach of Contract and Business Tort Lawsuit",
+        challenge: "Our client, a software development firm, was sued by a former partner for alleged breach of contract and tortious interference, seeking seven-figure damages.",
+        solution: "Our litigation team conducted aggressive discovery, uncovering evidence that contradicted the plaintiff's claims. We filed a motion for summary judgment, presenting a compelling argument that demonstrated the lack of merit in the plaintiff's case.",
+        result: "The court granted our motion for summary judgment, resulting in a complete dismissal of all claims against our client before the case ever reached a costly trial."
+    },
+    {
+        category: "Real Estate Law",
+        title: "Complex Multi-Property Commercial Real Estate Transaction",
+        challenge: "A client was acquiring a portfolio of three commercial properties with complex zoning issues, existing tenants, and tight financing deadlines.",
+        solution: "Our real estate attorneys coordinated extensive due diligence, renegotiated lease terms with key tenants, and worked with municipal authorities to resolve zoning discrepancies. We managed all parties—lenders, sellers, and title agents—to ensure a synchronized closing.",
+        result: "The transaction closed on schedule, securing the valuable portfolio for our client and protecting them from significant potential future liabilities."
+    }
+]
+
+---
+
+<Layout 
+    title="Case Studies & Testimonials | CKB Firm Results"
+    description="Explore proven results and client testimonials. See how CKB Firm has successfully represented businesses in complex litigation and collection matters."
+    seoKeyword="commercial litigation case results"
+>
+    <Hero 
+        title="Proven Results. Satisfied Clients."
+        tagline="Our success is measured by the success of our clients. Explore our track record of resolving complex legal challenges."
+    />
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">What Our Clients Say</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">We are proud to build lasting partnerships based on trust, communication, and exceptional outcomes.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {testimonials.map(item => (
+                    <blockquote class="bg-white p-8 rounded-lg shadow-md">
+                        <p class="text-gray-700 italic mb-4">"{item.quote}"</p>
+                        <footer class="font-bold text-brand-primary">- {item.author}</footer>
+                    </blockquote>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Work in Action: Case Studies</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">Dive deeper into how we apply our strategic approach to solve real-world legal problems for our clients.</p>
+            </div>
+            <div class="space-y-12 max-w-4xl mx-auto">
+                {caseStudies.map(study => (
+                    <div class="border border-gray-200 rounded-lg p-8 shadow-sm">
+                        <p class="font-semibold text-brand-accent mb-2">{study.category}</p>
+                        <h3 class="text-2xl font-bold font-heading mb-4">{study.title}</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <h4 class="font-bold text-brand-primary">The Challenge</h4>
+                                <p>{study.challenge}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-primary">Our Solution</h4>
+                                <p>{study.solution}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-primary">The Result</h4>
+                                <p>{study.result}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+
+</Layout>

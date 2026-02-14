@@ -1,0 +1,90 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import CTA from '@/components/CTA.astro';
+---
+
+<Layout 
+    title="Commercial Litigation Attorneys in Chicago"
+    description="Our experienced Chicago attorneys handle complex commercial litigation, including breach of contract and business disputes, to protect your company's interests."
+    seoKeyword="commercial litigation attorney Chicago"
+>
+    <Hero 
+        title="Commercial Litigation"
+        tagline="Strategic Advocacy for Complex Business Disputes"
+    />
+
+    <div class="container mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+            <section id="overview" class="mb-12">
+                <h2 class="text-3xl font-bold font-heading mb-4">Resolving Your Most Critical Business Disputes</h2>
+                <p class="text-gray-700 mb-4">When business disputes escalate, they can threaten your company's operations, reputation, and financial stability. CKB Firm provides assertive and strategic commercial litigation services designed to protect your interests and achieve favorable outcomes. We represent businesses, banks, and financial institutions in a wide range of disputes, combining rigorous legal analysis with a practical, business-oriented approach.</p>
+                <p class="text-gray-700">Our goal is to resolve conflicts efficiently, whether through negotiation, mediation, arbitration, or trial. We understand that litigation is a means to an end—a business objective—and we tailor our strategy accordingly.</p>
+            </section>
+
+            <section id="types" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">Types of Litigation We Handle</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-brand-primary font-bold mr-3 text-xl mt-1">✓</span>
+                        <div>
+                            <h3 class="font-bold text-lg">Breach of Contract</h3>
+                            <p class="text-gray-600">Enforcing contractual rights and defending against allegations of non-performance. We handle disputes involving vendor agreements, service contracts, partnership agreements, and more.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-brand-primary font-bold mr-3 text-xl mt-1">✓</span>
+                        <div>
+                            <h3 class="font-bold text-lg">Counterclaim Defense</h3>
+                            <p class="text-gray-600">When you initiate collection or other legal action, debtors or opponents may file counterclaims. We provide a vigorous defense to protect your primary claim and defeat frivolous or retaliatory actions.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-brand-primary font-bold mr-3 text-xl mt-1">✓</span>
+                        <div>
+                            <h3 class="font-bold text-lg">Business Torts</h3>
+                            <p class="text-gray-600">Litigating claims of unfair competition, fraud, tortious interference with contracts, and other economic harms.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-brand-primary font-bold mr-3 text-xl mt-1">✓</span>
+                        <div>
+                            <h3 class="font-bold text-lg">Shareholder & Partnership Disputes</h3>
+                            <p class="text-gray-600">Resolving internal conflicts over business operations, fiduciary duties, and ownership rights.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="process" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">Our Strategic Litigation Process</h2>
+                 <p class="text-gray-700 mb-6">We approach every case with a structured, strategic mindset:</p>
+                <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                    <li><span class="font-bold text-brand-primary">Case Evaluation & Risk Analysis:</span> We begin with a thorough investigation of the facts and a clear-eyed assessment of the strengths, weaknesses, and potential outcomes of your case.</li>
+                    <li><span class="font-bold text-brand-primary">Strategy Development:</span> Based on our analysis and your business objectives, we develop a tailored litigation strategy, defining key goals and the most effective path to achieve them.</li>
+                    <li><span class="font-bold text-brand-primary">Discovery & Motion Practice:</span> We skillfully manage the discovery process to build a strong factual record and utilize strategic motions to narrow the issues and gain procedural advantages.</li>
+                    <li><span class="font-bold text-brand-primary">Negotiation & Resolution:</span> We are skilled negotiators who seek opportunities for favorable settlements at every stage, saving you time and expense.</li>
+                    <li><span class="font-bold text-brand-primary">Trial & Appeal:</span> If a trial is necessary, our experienced litigators are prepared to vigorously advocate for you in court and, if required, on appeal.</li>
+                </ol>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+            <div class="bg-brand-light p-8 rounded-lg sticky top-28">
+                <h3 class="font-heading text-xl font-bold mb-4">Service Highlights</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Assertive Courtroom Representation</li>
+                    <li>Cost-Effective Resolution Strategies</li>
+                    <li>Vigorous Counterclaim Defense</li>
+                    <li>Deep Industry Knowledge</li>
+                    <li>Transparent Communication</li>
+                </ul>
+                <a href="/contact" class="mt-6 block w-full text-center bg-brand-primary text-white font-heading font-bold px-4 py-3 rounded-md hover:bg-opacity-90 transition-colors">Consult an Attorney</a>
+            </div>
+        </aside>
+    </div>
+
+    <CTA />
+</Layout>

@@ -1,0 +1,85 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import CTA from '@/components/CTA.astro';
+---
+
+<Layout 
+    title="Creditors' Rights & Debt Collection Lawyers | Illinois"
+    description="CKB Firm provides comprehensive creditors' rights and legal debt collection services for businesses across Illinois, leveraging advanced technology for efficient results."
+    seoKeyword="creditor rights lawyer Illinois"
+>
+    <Hero 
+        title="Creditors' Rights & Collections"
+        tagline="Maximizing Your Recovery with Efficiency and Precision"
+    />
+
+     <div class="container mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+            <section id="overview" class="mb-12">
+                <h2 class="text-3xl font-bold font-heading mb-4">Protecting Your Bottom Line</h2>
+                <p class="text-gray-700 mb-4">Unpaid debts can severely impact your business's cash flow and profitability. CKB Firm specializes in creditors' rights and legal debt collection, providing comprehensive services to help businesses, banks, and financial institutions recover what they are owed. We combine legal expertise with advanced technology to streamline the collection process and achieve superior results.</p>
+                <p class="text-gray-700">Our firm is capable of handling creditor claims throughout the United States through our extensive network of attorneys, offering a single point of contact for your national collection needs.</p>
+            </section>
+
+            <section id="services" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">Our Comprehensive Collection Services</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-brand-primary">Pre-Suit Collections</h3>
+                        <p class="text-gray-600">We initiate the recovery process with professional demand letters and communication designed to secure payment without litigation. This cost-effective first step often leads to a swift resolution.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-brand-primary">Litigation</h3>
+                        <p class="text-gray-600">When pre-suit efforts are unsuccessful, we promptly file suit to secure a judgment. Our experienced attorneys efficiently navigate the court system to obtain a legal mandate for payment, handling all aspects of the litigation process.</p>
+                    </div>
+                     <div>
+                        <h3 class="font-bold text-lg text-brand-primary">Post-Judgment Enforcement</h3>
+                        <p class="text-gray-600">A judgment is only valuable if it can be collected. We are highly skilled in post-judgment remedies, including wage garnishments, bank account levies, property liens, and asset discovery, to turn your judgment into cash.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="technology" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">The CKB Technology Advantage</h2>
+                <p class="text-gray-700 mb-4">CKB Firm is at the forefront of law office automation. We invest in the latest technology to provide value-added legal collection services. This allows us to:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Manage high-volume claim portfolios with precision and efficiency.</li>
+                    <li>Provide clients with real-time status updates through secure portals.</li>
+                    <li>Automate routine tasks to reduce costs and focus on high-impact legal strategy.</li>
+                    <li>Utilize advanced data analytics for asset location and recovery optimization.</li>
+                </ul>
+            </section>
+            
+            <section id="industries" class="mb-12">
+                 <h2 class="text-2xl font-bold font-heading mb-4">Industries We Serve</h2>
+                 <p class="text-gray-700">Our client base includes large and medium-sized publicly traded and privately held businesses, including:</p>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700">
+                     <li>Banks and Credit Unions</li>
+                     <li>Financial Institutions and Lenders</li>
+                     <li>Manufacturers and Distributors</li>
+                     <li>Service Providers</li>
+                     <li>B2B Companies</li>
+                 </ul>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+            <div class="bg-brand-light p-8 rounded-lg sticky top-28">
+                <h3 class="font-heading text-xl font-bold mb-4">Service Highlights</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Full-Service Recovery Process</li>
+                    <li>Advanced Technology Integration</li>
+                    <li>Nationwide Claim Handling</li>
+                    <li>Contingency Fee Options Available</li>
+                    <li>Regulatory Compliance</li>
+                </ul>
+                <a href="/contact" class="mt-6 block w-full text-center bg-brand-primary text-white font-heading font-bold px-4 py-3 rounded-md hover:bg-opacity-90 transition-colors">Start Recovery Process</a>
+            </div>
+        </aside>
+    </div>
+
+    <CTA />
+</Layout>

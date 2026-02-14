@@ -1,0 +1,139 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import CTA from '@/components/CTA.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
+
+const practiceAreas = [
+    {
+        title: 'Commercial Litigation',
+        description: 'Resolving complex business disputes, from breach of contract to counterclaim defense, with strategic and assertive representation.',
+        link: '/practice-areas/commercial-litigation'
+    },
+    {
+        title: 'Creditors\' Rights',
+        description: 'Maximizing recovery for businesses, banks, and financial institutions through efficient pre-suit, litigation, and post-judgment strategies.',
+        link: '/practice-areas/creditors-rights'
+    },
+    {
+        title: 'Real Estate Law',
+        description: 'Ensuring smooth and legally sound commercial and residential real estate transactions, from closings to dispute resolution.',
+        link: '/practice-areas/real-estate-law'
+    }
+]
+---
+
+<Layout 
+    title="Commercial Law Firm in Chicago, IL | CKB Firm"
+    description="CKB Firm is a leading Chicago-based commercial law firm specializing in litigation, creditors' rights, and real estate. We offer strategic legal solutions to protect and grow your business."
+    seoKeyword="commercial law firm Chicago"
+>
+    <Hero 
+        title="Strategic Commercial Law for Illinois Businesses"
+        tagline="Litigation, Collections & Real Estate. We leverage modern technology and tailored strategies to achieve optimal outcomes for our clients."
+        ctaText="Schedule a Consultation"
+        ctaLink="/contact"
+    />
+
+    <!-- Practice Areas -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Core Practice Areas</h2>
+            <p class="max-w-3xl mx-auto text-gray-600 mb-12">CKB Firm focuses on the critical legal areas that impact your bottom line. We deliver targeted expertise to navigate your most pressing challenges.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {practiceAreas.map(area => (
+                    <div class="border border-gray-200 p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-2xl font-bold font-heading mb-3">{area.title}</h3>
+                        <p class="text-gray-600 mb-6">{area.description}</p>
+                        <a href={area.link} class="font-bold text-brand-primary hover:text-brand-accent transition-colors">Learn More &rarr;</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Experience, Technology, and a Client-First Approach</h2>
+                    <p class="text-gray-700 mb-4">The cornerstone of our success is the quality relationships we maintain with our clients. We pride ourselves on the ability to tailor our legal representation to meet diverse needs, ensuring you are timely updated with intelligent legal recommendations.</p>
+                    <p class="text-gray-700 mb-6">At CKB Firm, we are at the forefront of law office automation. By investing in the latest technology, we provide value-added legal services, enhancing efficiency and delivering superior results for the business community.</p>
+                    <a href="/about" class="bg-brand-primary text-white font-heading font-bold px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Meet Our Team</a>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-heading font-bold text-xl mb-2">Proven Expertise</h4>
+                        <p class="text-sm text-gray-600">Decades of combined experience in high-stakes commercial law.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-heading font-bold text-xl mb-2">Tech-Forward</h4>
+                        <p class="text-sm text-gray-600">Utilizing automation to streamline processes and reduce costs.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-heading font-bold text-xl mb-2">Nationwide Network</h4>
+                        <p class="text-sm text-gray-600">Capable of handling creditor claims throughout the United States.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-heading font-bold text-xl mb-2">Client-Centric</h4>
+                        <p class="text-sm text-gray-600">Tailored strategies and transparent communication are our standard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Trusted by Businesses Like Yours</h2>
+            <p class="max-w-3xl mx-auto text-gray-600 mb-12">Our results speak for themselves. Here’s what our clients have to say about our partnership.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                 <blockquote class="bg-brand-light p-8 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"CKB Firm's strategic approach to our litigation case was flawless. They were communicative, professional, and ultimately secured a result that exceeded our expectations. They are our go-to counsel for any complex commercial dispute."
+                    </p>
+                    <footer class="font-bold text-brand-primary">- CFO, Manufacturing Company</footer>
+                </blockquote>
+                <blockquote class="bg-brand-light p-8 rounded-lg shadow-sm">
+                    <p class="text-gray-700 italic mb-4">"As a financial institution, we rely on CKB Firm for their expertise in creditors' rights. Their tech-enabled process for collections is incredibly efficient and has significantly improved our recovery rates. Highly recommended."
+                    </p>
+                    <footer class="font-bold text-brand-primary">- VP of Lending, Regional Bank</footer>
+                </blockquote>
+            </div>
+             <a href="/client-success" class="mt-12 inline-block font-bold text-brand-primary hover:text-brand-accent transition-colors">View More Case Studies &rarr;</a>
+        </div>
+    </section>
+
+     <!-- Blog Preview -->
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Legal Insights & Resources</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">Stay informed with our expert analysis on Illinois commercial law, litigation trends, and business legal strategies.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {posts.map(post => (
+                    <a href={`/blog/${post.slug}/`} class="block bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">{post.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                            <h3 class="font-heading text-xl font-bold mb-3 leading-tight">{post.data.title}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">{post.data.description}</p>
+                            <span class="font-bold text-brand-primary">Read More &rarr;</span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+            <div class="text-center mt-12">
+                <a href="/blog" class="bg-brand-primary text-white font-heading font-bold px-8 py-3 rounded-md hover:bg-opacity-90 transition-colors">Visit Our Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <CTA />
+
+</Layout>

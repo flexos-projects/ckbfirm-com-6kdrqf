@@ -1,0 +1,75 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import CTA from '@/components/CTA.astro';
+---
+
+<Layout 
+    title="Commercial & Residential Real Estate Law Attorneys"
+    description="Navigate commercial and residential real estate transactions in Illinois with confidence. Our attorneys ensure smooth, legally sound closings and dispute resolution."
+    seoKeyword="Illinois real estate transaction attorney"
+>
+    <Hero 
+        title="Real Estate Law"
+        tagline="Guiding You Through Every Step of Your Transaction"
+    />
+
+     <div class="container mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+            <section id="overview" class="mb-12">
+                <h2 class="text-3xl font-bold font-heading mb-4">Secure and Seamless Real Estate Transactions</h2>
+                <p class="text-gray-700 mb-4">Whether you are buying, selling, or leasing property, the legal complexities can be daunting. CKB Firm provides experienced legal counsel for both commercial and residential real estate matters in Illinois. Our goal is to protect your investment and ensure a smooth, efficient process from contract to closing.</p>
+                <p class="text-gray-700">We combine meticulous attention to detail with a proactive approach to identify and resolve potential issues before they become costly problems.</p>
+            </section>
+
+            <section id="commercial" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">Commercial Real Estate Services</h2>
+                <p class="text-gray-700 mb-4">We represent developers, investors, landlords, and tenants in a wide array of commercial real estate transactions, including:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Purchase and Sale Agreements for office, retail, industrial, and multi-family properties.</li>
+                    <li>Commercial Lease Drafting and Negotiation.</li>
+                    <li>Title Review and Due Diligence.</li>
+                    <li>Zoning and Land Use Matters.</li>
+                    <li>Financing and Loan Document Review.</li>
+                    <li>Commercial Closings.</li>
+                </ul>
+            </section>
+
+            <section id="residential" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">Residential Real Estate Services</h2>
+                <p class="text-gray-700 mb-4">For most people, a home is their largest investment. Our attorneys provide peace of mind by guiding clients through every step of the residential closing process for:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Single-Family Homes, Condominiums, and Townhouses.</li>
+                    <li>New Construction Purchases.</li>
+                    <li>For Sale By Owner (FSBO) Transactions.</li>
+                    <li>Contract Review and Negotiation.</li>
+                    <li>Resolving Title and Inspection Issues.</li>
+                    <li>Representation at Closing.</li>
+                </ul>
+            </section>
+
+            <section id="process" class="mb-12">
+                <h2 class="text-2xl font-bold font-heading mb-4">The CKB Closing Process</h2>
+                <p class="text-gray-700">We pride ourselves on a transparent and client-focused closing process. From the initial contract review to the final handshake, we keep you informed and protected. Our attorneys meticulously review all documents, coordinate with lenders, title companies, and other parties, and provide clear explanations to ensure you are confident and prepared at the closing table.</p>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+            <div class="bg-brand-light p-8 rounded-lg sticky top-28">
+                <h3 class="font-heading text-xl font-bold mb-4">Service Highlights</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Commercial & Residential Expertise</li>
+                    <li>Thorough Contract Review</li>
+                    <li>Proactive Issue Resolution</li>
+                    <li>Flat-Fee Closing Services Available</li>
+                    <li>Personalized Attorney Service</li>
+                </ul>
+                <a href="/contact" class="mt-6 block w-full text-center bg-brand-primary text-white font-heading font-bold px-4 py-3 rounded-md hover:bg-opacity-90 transition-colors">Schedule a Consultation</a>
+            </div>
+        </aside>
+    </div>
+
+    <CTA />
+</Layout>

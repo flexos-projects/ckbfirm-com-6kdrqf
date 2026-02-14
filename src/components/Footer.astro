@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+--- 
+<footer class="bg-brand-primary text-white mt-16">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About Section -->
+      <div>
+        <h3 class="font-heading text-xl font-bold mb-4">CKB Firm</h3>
+        <p class="text-brand-secondary text-sm">Strategic Commercial Law for Illinois Businesses. We provide exceptional, value-added legal services to protect and grow your interests.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-heading text-lg font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-brand-accent transition-colors">About Us</a></li>
+          <li><a href="/practice-areas/commercial-litigation" class="hover:text-brand-accent transition-colors">Practice Areas</a></li>
+          <li><a href="/client-success" class="hover:text-brand-accent transition-colors">Client Success</a></li>
+          <li><a href="/blog" class="hover:text-brand-accent transition-colors">Insights</a></li>
+          <li><a href="/contact" class="hover:text-brand-accent transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Practice Areas -->
+      <div>
+        <h3 class="font-heading text-lg font-bold mb-4">Practice Areas</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/practice-areas/commercial-litigation" class="hover:text-brand-accent transition-colors">Commercial Litigation</a></li>
+          <li><a href="/practice-areas/creditors-rights" class="hover:text-brand-accent transition-colors">Creditors' Rights</a></li>
+          <li><a href="/practice-areas/real-estate-law" class="hover:text-brand-accent transition-colors">Real Estate Law</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="font-heading text-lg font-bold mb-4">Contact Us</h3>
+        <address class="not-italic space-y-2 text-sm text-brand-secondary">
+          <p>123 N Wacker Dr, Suite 2350<br>Chicago, IL 60606</p>
+          <p>Phone: <a href="tel:312-782-9599" class="hover:text-brand-accent"> (312) 782-9599</a></p>
+          <p>Email: <a href="mailto:info@ckbfirm.com" class="hover:text-brand-accent">info@ckbfirm.com</a></p>
+        </address>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-brand-secondary">
+      <p>&copy; {currentYear} CKB Firm. All Rights Reserved.</p>
+      <p class="mt-2">Disclaimer: The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.</p>
+    </div>
+  </div>
+</footer>

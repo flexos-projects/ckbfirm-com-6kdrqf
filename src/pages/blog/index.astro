@@ -1,0 +1,41 @@
+--- 
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/Hero.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout
+    title="Legal Insights & Business Resources Blog"
+    description="Stay informed with the CKB Firm's blog, offering expert analysis on Illinois commercial law, litigation trends, and business legal strategies."
+    seoKeyword="Illinois commercial law blog"
+>
+    <Hero 
+        title="CKB Firm Insights"
+        tagline="Expert analysis on the legal issues that matter to your business."
+    />
+
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {allPosts.map(post => (
+                     <a href={`/blog/${post.slug}/`} class="block bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow">
+                                <p class="text-sm text-gray-500 mb-2">{post.data.pubDate.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                <h2 class="font-heading text-xl font-bold mb-3 leading-tight text-brand-primary">{post.data.title}</h2>
+                                <p class="text-gray-600 mb-4 line-clamp-4">{post.data.description}</p>
+                            </div>
+                            <div class="mt-auto">
+                                <span class="font-bold text-brand-primary">Read More &rarr;</span>
+                            </div>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,76 @@
+---
+const navLinks = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { 
+    text: "Practice Areas",
+    dropdown: [
+        { href: "/practice-areas/commercial-litigation", text: "Commercial Litigation" },
+        { href: "/practice-areas/creditors-rights", text: "Creditors' Rights" },
+        { href: "/practice-areas/real-estate-law", text: "Real Estate Law" },
+    ]
+  },
+  { href: "/client-success", text: "Client Success" },
+  { href: "/blog", text: "Insights" },
+  { href: "/contact", text: "Contact" },
+];
+--- 
+<header class="bg-white sticky top-0 z-50 shadow-md" x-data="{ isOpen: false, isDropdownOpen: false }">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="font-heading text-2xl font-bold text-brand-primary">CKB Firm</a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-6">
+            {navLinks.map(link => (
+                link.dropdown ? (
+                    <div class="relative" @mouseenter="isDropdownOpen = true" @mouseleave="isDropdownOpen = false">
+                        <button class="font-heading hover:text-brand-accent transition-colors duration-200">
+                            {link.text}
+                        </button>
+                        <div x-show="isDropdownOpen" x-transition class="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-md py-2 z-10">
+                            {link.dropdown.map(item => (
+                                <a href={item.href} class="block px-4 py-2 text-sm text-brand-dark hover:bg-brand-light">{item.text}</a>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    <a href={link.href} class="font-heading hover:text-brand-accent transition-colors duration-200">{link.text}</a>
+                )
+            ))}
+            <a href="/contact" class="bg-brand-primary text-white font-heading px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors duration-200">Free Consultation</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+            <button @click="isOpen = !isOpen" class="text-brand-primary focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div x-show="isOpen" @click.away="isOpen = false" class="lg:hidden bg-white shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+             {navLinks.map(link => (
+                link.dropdown ? (
+                    <div class="relative" x-data="{ isMobileDropdownOpen: false }">
+                        <button @click="isMobileDropdownOpen = !isMobileDropdownOpen" class="w-full text-left font-heading block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:text-brand-accent hover:bg-brand-light focus:outline-none focus:text-brand-accent focus:bg-brand-light transition duration-150 ease-in-out">
+                            {link.text}
+                        </button>
+                        <div x-show="isMobileDropdownOpen" class="pl-4">
+                            {link.dropdown.map(item => (
+                                <a href={item.href} class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:text-brand-accent hover:bg-brand-light">{item.text}</a>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    <a href={link.href} class="font-heading block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:text-brand-accent hover:bg-brand-light focus:outline-none focus:text-brand-accent focus:bg-brand-light transition duration-150 ease-in-out">{link.text}</a>
+                )
+            ))}
+            <a href="/contact" class="block w-full text-center bg-brand-primary text-white font-heading mt-2 px-4 py-2 rounded-md hover:bg-opacity-90 transition-colors duration-200">Free Consultation</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</header>
