@@ -5,13 +5,14 @@ interface Props {
     ctaText?: string;
     ctaLink?: string;
     imageUrl?: string;
+    altText?: string;
 }
 
-const { title, tagline, ctaText, ctaLink, imageUrl = '/chicago-skyline.jpg' } = Astro.props;
+const { title, tagline, ctaText, ctaLink, imageUrl = 'https://images.pexels.com/photos/2083840/pexels-photo-2083840.jpeg', altText = 'Chicago Skyline' } = Astro.props;
 ---
 <section class="relative bg-brand-dark text-white py-20 md:py-32">
     <div class="absolute inset-0">
-        <img src={imageUrl} alt="Chicago Skyline" class="w-full h-full object-cover opacity-30">
+        <img src={imageUrl} alt={altText} class="w-full h-full object-cover opacity-30">
     </div>
     <div class="container mx-auto px-6 relative z-10 text-center">
         <h1 class="text-4xl md:text-6xl font-bold font-heading leading-tight mb-4">{title}</h1>
